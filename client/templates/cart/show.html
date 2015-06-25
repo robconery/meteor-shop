@@ -1,0 +1,64 @@
+<template name="cartShow">
+  <div class="container" style="padding-top: 30px">
+    <div class="row">
+      <div class="col-xs-12">
+        {{#unless thereAreNo cart.items}}
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <div class="row">
+                <div class="col-xs-6">
+                  <h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            {{#each cart.items}}
+            <div class="row">
+              <div class="col-xs-2"><img class="img-responsive" src="/images/products/{{image}}" width="140">
+              </div>
+              <div class="col-xs-4">
+                <h4 class="product-name"><strong>{{name}}</strong></h4><h4><small>Product description</small></h4>
+              </div>
+              <div class="col-xs-6">
+                <div class="col-xs-6 text-right">
+                  <h6><strong>{{money price}} <span class="text-muted">x</span></strong></h6>
+                </div>
+                <div class="col-xs-4">
+                  <input type="text" class="form-control input-sm item-qty" value="{{quantity}}">
+                </div>
+                <div class="col-xs-2">
+                  <a type="button" class="btn btn-link btn-xs remove-from-cart">
+                    <span class="glyphicon glyphicon-trash"> </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            {{/each}}
+          </div>
+          <div class="panel-footer">
+            <div class="row text-center">
+              <div class="col-xs-9">
+                <h4 class="text-right">Total <strong>{{money cart.total}}</strong></h4>
+              </div>
+              <div class="col-xs-3">
+                <a type="button" href="{{pathFor 'checkoutShow'}}" class="btn btn-success btn-block">
+                  Checkout
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{else}}
+          <div style="text-align: center">
+            <h2>There's nothing in your cart!</h2>
+            <a href="{{pathFor 'homeIndex'}}">You should go have a look around</a>
+          </div>
+
+        {{/unless}}
+      </div>
+    </div>
+  </div>
+</template>

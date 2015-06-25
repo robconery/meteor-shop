@@ -1,0 +1,25 @@
+<template name="homeIndex">
+  <div class="cover">
+    <div class="clearfix"></div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <h1>Welcome to The Rocket Shop</h1>
+          <p class="lead">
+            To Mars With You!
+          </p>
+        </div>
+      </div>
+      <hr/>
+    </div>
+  </div>
+  <div class="container marketing">
+    <div class="row">
+      {{#each featured}}
+        {{> productTile this}}
+      {{/each}}
+    </div>
+  </div>
+</template>

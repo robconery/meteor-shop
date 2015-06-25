@@ -1,0 +1,21 @@
+{
+  "servers": [
+    {
+      "host": "YOUR DOMAIN",
+      "username": "YOUR USERNAME", //drop "password" in next line if you don't use known_keys
+      "pem": "~/.ssh/id_rsa"
+    }
+  ],
+  "setupMongo": true,
+  "setupNode": true,
+  "nodeVersion" : "0.10.36",
+  "setupPhantom": true,
+  "enableUploadProgressBar": true,
+  "appName": "YOUR APP NAME",
+  "app": ".",
+  "env": {
+    "PORT":"80",
+    "ROOT_URL": "YOUR URL"
+  },
+  "deployCheckWaitTime": 20
+}

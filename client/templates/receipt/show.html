@@ -1,0 +1,97 @@
+<template name="receiptShow">
+  {{#with receipt}}
+    <div class="container" style="padding-top: 60px">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>
+            <a href="{{pathFor 'homeIndex'}}">
+              <img src="/images/logo-header.png">
+            </a>
+          </h1>
+        </div>
+        <div class="col-xs-6 text-right">
+          <h1>INVOICE</h1>
+          <h1><small>Invoice {{reference_key}}</small></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>From: <a href="#">The Rocket Shop</a></h4>
+            </div>
+            <div class="panel-body">
+              <p>
+                99 Weke Road <br>
+                Hanalei, HI <br>
+                USA <br>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-5 col-xs-offset-2 text-right">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>To : <a href="#">{{name}}</a></h4>
+            </div>
+            <div class="panel-body">
+              <p>
+                {{billing_address.street}} <br>
+                {{billing_address.city}}, {{billing_address.state}}  {{billing_address.zip}}<br>
+                {{billing_address.country}} <br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / end client details section -->
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>
+            <h4>Item</h4>
+          </th>
+          <th>
+            <h4>Description</h4>
+          </th>
+          <th>
+            <h4>Qty</h4>
+          </th>
+          <th>
+            <h4>Price</h4>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each items}}
+          <tr>
+            <td><a href="{{pathFor 'productsShow'}}">{{name}}</a></td>
+            <td class="text-right">{{summary}}</td>
+            <td class="text-right">{{quantity}}</td>
+            <td class="text-right">{{money price}}</td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+      <div class="row text-right">
+        <div class="col-xs-2 col-xs-offset-8">
+          <p>
+            <strong>
+              Total :
+            </strong>
+          </p>
+        </div>
+        <div class="col-xs-2">
+          <strong>
+            {{money total}}
+          </strong>
+        </div>
+      </div>
+    </div>
+  {{else}}
+    <div style="text-align: center">
+      <h2>There's no receipt with that id</h2>
+      <a href="{{pathFor 'homeIndex'}}">You should go buy something...</a>
+    </div>
+  {{/with}}
+</template>
