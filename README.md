@@ -55,7 +55,7 @@ psql [your db name]
 #paste the create script above here
 
 CREATE ROLE [your db user] WITH PASSWORD [your password];
-GRANT ALL ON [your db name] to [your db user];
+GRANT ALL ON DATABASE [your db name] to [your db user];
 ALTER TABLE checkouts OWNER TO [your db user];
 \q
 exit
