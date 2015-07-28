@@ -1,0 +1,38 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <div class="row">
+        <div class="col-xs-12">
+          <h5><span class="glyphicon glyphicon-shopping-cart"></span> Your Purchase</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each items}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{quantity}}</td>
+          <td style="text-align: right">{{money price}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <div class="row text-center">
+      <div class="col-xs-9">
+        <h4 class="text-right">Total <strong>{{money total}}</strong></h4>
+      </div>
+    </div>
+  </div>
+</div>
