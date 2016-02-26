@@ -66,4 +66,4 @@ If you know how to install Postgres already - go with what you know :).
 
 ## Screencast of the Building of This App
 
-I work for Pluralsight and like to create screencasts about the things I'm working on - and I did that for this project. [You can watch it here](http://www.pluralsight.com/courses/discussion/meteorjs-web-application).
+I work for Pluralsight and like to create screencasts about the things I'm working on - and I did that for this project. [You can watch it here](https://www.pluralsight.com/courses/meteorjs-web-application).
